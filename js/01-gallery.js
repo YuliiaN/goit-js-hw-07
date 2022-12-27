@@ -6,7 +6,6 @@ const galleryWrapper = document.querySelector(".gallery");
 
 const gallery = createPreviewGallery(galleryItems);
 galleryWrapper.insertAdjacentHTML("beforeend", gallery);
-galleryWrapper.addEventListener("click", onClickPrevent);
 galleryWrapper.addEventListener("click", onClickOpen);
 
 function createPreviewGallery(arr) {
@@ -26,11 +25,8 @@ function createPreviewGallery(arr) {
     .join("");
 }
 
-function onClickPrevent(event) {
-  event.preventDefault();
-}
-
 function onClickOpen(event) {
+  event.preventDefault();
   const elem = event.target;
 
   if (elem.nodeName !== "IMG") {
